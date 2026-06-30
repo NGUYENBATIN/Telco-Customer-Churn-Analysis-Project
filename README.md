@@ -4,6 +4,8 @@
 ![Power BI](https://img.shields.io/badge/BI-Power%20BI-yellow)
 
 ---
+## **DATASET LINK**: 
+https://www.kaggle.com/datasets/blastchar/telco-customer-churn
 
 ## 📌 Project Overview
 
