@@ -52,30 +52,39 @@ Analyse telecom customer data to:
 - Encourage **targeted retention strategies** that yield the highest return on investment(ROI).
 
 ---
-## **Hypotheses**
+## 🔬 Core Analytical Hypotheses
 
-Before analysis, the following hypotheses were framed:
+To guide the exploratory data analysis (EDA) and structure the predictive modeling phase, the following core hypotheses were established:
 
-- **H1:** Customers with low tenure are more likely to churn  
-- **H2:** Higher monthly charges increase churn risk  
-- **H3:** Flexible (month-to-month) contracts lead to higher churn  
-- **H4:** Billing preferences and service usage impact churn behavior  
+* **H1 (Tenure Impact):** A strong negative correlation exists between customer loyalty and churn, meaning subscribers in their early adoption cycles (low tenure) present the highest defection risk.
+* **H2 (Price Sensitivity):** Financial strain acts as a primary churn trigger; higher monthly billing rates directly accelerate subscriber attrition.
+* **H3 (Contractual Fluidity):** Subscription structures dictate stability; flexible, month-to-month contracts suffer significantly higher churn compared to long-term commitments.
+* **H4 (Behavioral & Operational Triggers):** Digital billing preferences, automatic payment methods, and premium technical service adoption serve as critical drivers of customer retention.
 
-These hypotheses guided both exploratory analysis and modeling.
+These foundational assumptions served as the analytical framework for validating patterns within our subscriber data..
 
 ---
-## **Dataset Overview**
+## 📊 Dataset & Feature Architecture
 
-- **Total Records:** **7,043 customers**
-- **Target Variable:** **Churn (Yes / No)**
-- **Churn Distribution:**
-  - **73.42% Retained**
-  - **26.58% Churned**
+The analysis is executed on a refined cohort of subscriber profiles, structured to isolate behavioral deviations between loyal and departing segments.
 
-**Key Feature Groups:**
-- **Demographics:** Gender, SeniorCitizen, Partner, Dependents  
-- **Services:** Phone, MultipleLines, Internet, Security, Backup  
-- **Account Info:** Tenure, Contract, Payment Method, Monthly Charges
+* **Total Evaluated Cohort:** **7,032 subscribers** (Post database-level data cleansing)
+* **Target Analytical Feature:** `Churn` (Binary Class: Yes / No)
+* **Base Attrition Distribution:**
+  * **73.42% Retained** (5,163 Active Accounts)
+  * **26.58% Churned** (1,869 Defected Accounts)
+
+---
+
+### 🗂️ Core Feature Categorization
+
+The dataset features are organized into three primary operational dimensions to capture holistic customer behavior:
+
+| Feature Dimension | Target Variables | Strategic Analytical Purpose |
+| :--- | :--- | :--- |
+| **Demographic Profiles** | `gender`, `SeniorCitizen`, `Partner`, `Dependents` | Evaluates socioeconomic stability and core user lifecycle traits. |
+| **Ecosystem & Service Adoption** | `PhoneService`, `MultipleLines`, `InternetService`, `OnlineSecurity`, `OnlineBackup`, `DeviceProtection`, `TechSupport`, `StreamingTV`, `StreamingMovies` | Measures product engagement, cross-selling potential, and ecosystem stickiness. |
+| **Account & Financial Metrics** | `tenure`, `Contract`, `PaperlessBilling`, `PaymentMethod`, `MonthlyCharges`, `TotalCharges` | Pinpoints pricing sensitivity, billing friction points, and contractual vulnerabilities.
 
 ---
 ## **Dashboard Overview**
